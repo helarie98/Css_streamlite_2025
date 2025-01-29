@@ -9,13 +9,17 @@ name = "Ms Helarie Rose Medie Fah"
 field = "Quantum Computing"
 institution = "University Kwazulu-Natal"
 
-# Display basic profile information
-st.header("Researcher Overview")
-st.write(f"**Name:** {name}")
-st.write(f"**Field of Research:** {field}")
-st.write(f"**Institution:** {institution}")
+# Layout using columns for a better UI
+col1, col2 = st.columns([1, 2])
 
-st.image("my_image.png")
+with col1:
+    st.image("my_image.png", width=200, caption="Profile Picture")  # Adjust image size
+
+with col2:
+    st.header("Researcher Overview")
+    st.write(f"**👩‍🔬 Name:** {name}")
+    st.write(f"**📚 Field of Research:** {field}")
+    st.write(f"**🏛 Institution:** {institution}")
 
 # Add a section for publications
 st.header("Publications")
